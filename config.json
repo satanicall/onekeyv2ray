@@ -1,24 +1,34 @@
 {
-  "log": {
-    "loglevel": "warning"
-  },
-  "inbound": {
-    "protocol": "vmess",
-    "port": 8080,
-    "settings": {
-      "clients": [
-        {
-          "id": "your_uuid",
-          "alterId": 64
-        }
-      ]
+    "log":{
+        "loglevel":"warning"
     },
-    "streamSettings": {
-      "network": "ws"
-    }
-  },
-  "outbound": {
-    "protocol": "freedom",
-    "settings": {}
-  }
+    "inbound":{
+        "port":8080,
+        "protocol":"vmess",
+        "settings":{
+            "clients":[
+                {
+                    "id":"your_uuid",
+                    "alterId":32
+                }
+            ]
+        },
+        "streamSettings":{
+            "network":"ws"
+        }
+    },
+    "outbound":{
+        "protocol":"freedom",
+        "settings":{}
+    },
+    "inboundDetour":[
+        {
+            "protocol":"shadowsocks",
+            "port":8285,
+            "settings":{
+                "method":"aes-256-cfb",
+                "password":"password"
+            }
+        }
+    ]
 }
