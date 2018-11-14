@@ -6,6 +6,7 @@
 #fi
 
 cd /v2ray
+ls -l
 wget -O v2ray.zip http://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip
 unzip v2ray.zip -d /v2ray/v2ray-v$VER-linux-64
 echo show current dir
@@ -18,7 +19,7 @@ mv /v2ray/v2ray-v$VER-linux-64/geosite.dat .
 ls -l
 rm -fR /v2ray/v2ray-v$VER-linux-64
 unzip -h
-ls -lR /
+ls -l 
 
 chmod +x v2ray v2ctl
 sed -i "s/your_uuid/$UUID/g" config.json
