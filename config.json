@@ -2,33 +2,38 @@
     "log":{
         "loglevel":"warning"
     },
-    "inbound":{
-        "port":8080,
-        "protocol":"vmess",
-        "settings":{
-            "clients":[
-                {
-                    "id":"your_uuid",
-                    "alterId":32
-                }
-            ]
-        },
-        "streamSettings":{
-            "network":"ws"
-        }
-    },
-    "outbound":{
-        "protocol":"freedom",
-        "settings":{}
-    },
-    "inboundDetour":[
-        {
-            "protocol":"shadowsocks",
-            "port":8285,
+    "inbounds":[
+	    {
+            "tag":"ssin",
+			"protocol":"shadowsocks",
+            "port":8080,
             "settings":{
                 "method":"aes-256-cfb",
-                "password":"password"
+                "password":"SSoCkS823)@%"
             }
-        }
-    ]
+        }/*,
+		{
+			"tag":"vmessin",
+			"port":8080,
+			"protocol":"vmess",
+			"settings":{
+				"clients":
+				[   {
+						"id":"your_uuid",
+						"alterId":32
+                    }
+				]
+			},
+			"streamSettings":{
+				"network":"ws"
+			}
+		}*/
+	],
+    "outbounds":[
+		{
+			"tag":"direct",
+			"protocol":"freedom",
+			"settings":{}
+		}
+	]
 }
